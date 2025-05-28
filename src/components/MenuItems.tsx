@@ -1,9 +1,20 @@
+'use client';
+import { useRouter } from "next/navigation";
+
 const PublicSpaceMenuItem = () => {
-    return <a>Public space</a>;
+    const router = useRouter();
+ 
+    return <a onClick={() => {
+        router.push('/public');
+    }}>Public space</a>;
 };
 
 const PrivateSpaceMenuItem = () => {
-    return <a>Private space</a>;
+    const router = useRouter();
+    
+    return <a onClick={() => {
+        router.push('/private');
+    }}>Private space</a>;
 };
 
 export { PublicSpaceMenuItem, PrivateSpaceMenuItem };
