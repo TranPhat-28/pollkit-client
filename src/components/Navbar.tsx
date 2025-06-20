@@ -17,8 +17,8 @@ const Navbar = () => {
                         <HiMenuAlt1 size={"24px"} />
                     </label>
                 </div>
-                <div className="mx-2 flex-1 lg:flex-none px-2 text-logo">
-                    PollKit
+                <div className="ml-0 pl-0 lg:ml-2 lg:pl-2 pr-2 mr-2 flex-1 lg:flex-none">
+                    <button className="btn btn-ghost text-logo" onClick={() => router.push("/")}>PollKit</button>
                 </div>
                 <div className="hidden flex-none lg:block">
                     <ul className="menu menu-horizontal">
@@ -75,7 +75,7 @@ const Navbar = () => {
                         </li>
                     </ul>
                 </div>
-                <button className="btn btn-primary btn-outline lg:ml-auto">
+                <button className="btn btn-primary btn-outline lg:ml-auto" onClick={() => router.push("/login")}>
                     Login
                 </button>
             </div>
