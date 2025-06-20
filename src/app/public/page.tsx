@@ -4,8 +4,8 @@ export default function Public() {
     return (
         <div className="h-full w-full p-4 md:p-5 lg:p-6">
             {/* Description */}
-            <h1 className="font-bold">Public Poll Space</h1>
-            <div role="alert" className="alert alert-soft">
+            <h1 className="font-bold text-xl mt-2 mb-4">Public Poll Space</h1>
+            <div role="alert" className="alert alert-soft mb-4">
                 <FaCircleInfo />
                 <span>
                     Public polls are created by anonymous users,
@@ -14,7 +14,7 @@ export default function Public() {
             </div>
 
             {/* Polls list */}
-            <ul className="list bg-base-100 rounded-box shadow-md">
+            <ul className="list bg-base-100 rounded-box shadow-md bg-base-200">
                 <li className="p-4 pb-2 tracking-wide">On going polls</li>
 
                 <li className="list-row">

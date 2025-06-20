@@ -4,14 +4,14 @@ export default function Private() {
     return (
         <div className="h-full w-full p-4 md:p-5 lg:p-6">
             {/* Description */}
-            <h1 className="font-bold">Private Poll Space</h1>
-            <div role="alert" className="alert alert-soft">
+            <h1 className="font-bold text-xl mt-2 mb-4">Private Poll Space</h1>
+            <div role="alert" className="alert alert-soft mb-4">
                 <FaCircleInfo />
                 <span>A user must log in to create private polls, and anonymous users cannot vote in these polls.</span>
             </div>
 
             {/* Polls list */}
-            <ul className="list bg-base-100 rounded-box shadow-md">
+            <ul className="list bg-base-100 rounded-box shadow-md bg-base-200">
                 <li className="p-4 pb-2 tracking-wide">On going polls</li>
 
                 <li className="list-row">
