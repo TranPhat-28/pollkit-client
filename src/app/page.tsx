@@ -5,7 +5,7 @@ import LockedCreatePrivatePollCard from "@/components/LockedCreatePrivatePollCar
 import { useState } from "react";
 
 export default function Home() {
-  const [isAuthed, setIsAuthed] = useState<boolean>(true);
+  const [isAuthed] = useState<boolean>(true);
   
   return (
     <div className="h-full w-full p-4 md:p-5 lg:p-6">

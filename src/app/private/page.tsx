@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { FaCircleInfo } from "react-icons/fa6";
 
 export default function Private() {
@@ -7,17 +8,23 @@ export default function Private() {
             <h1 className="font-bold text-xl mt-2 mb-4">Private Poll Space</h1>
             <div role="alert" className="alert alert-soft mb-4">
                 <FaCircleInfo />
-                <span>A user must log in to create private polls, and anonymous users cannot vote in these polls.</span>
+                <span>
+                    A user must log in to create private polls, and anonymous
+                    users cannot vote in these polls.
+                </span>
             </div>
 
             {/* Polls list */}
-            <ul className="list bg-base-100 rounded-box shadow-md bg-base-200">
+            <ul className="list rounded-box shadow-md bg-base-200">
                 <li className="p-4 pb-2 tracking-wide">On going polls</li>
 
                 <li className="list-row">
                     <div>
-                        <img
-                            className="size-10 rounded-box"
+                        <Image
+                            alt="Demo image"
+                            width={40}
+                            height={40}
+                            className="rounded-box"
                             src="https://img.daisyui.com/images/profile/demo/1@94.webp"
                         />
                     </div>
@@ -65,8 +72,11 @@ export default function Private() {
 
                 <li className="list-row">
                     <div>
-                        <img
-                            className="size-10 rounded-box"
+                        <Image
+                            alt="Demo image"
+                            width={40}
+                            height={40}
+                            className="rounded-box"
                             src="https://img.daisyui.com/images/profile/demo/4@94.webp"
                         />
                     </div>
@@ -114,8 +124,11 @@ export default function Private() {
 
                 <li className="list-row">
                     <div>
-                        <img
-                            className="size-10 rounded-box"
+                        <Image
+                            alt="Demo image"
+                            width={40}
+                            height={40}
+                            className="rounded-box"
                             src="https://img.daisyui.com/images/profile/demo/3@94.webp"
                         />
                     </div>
@@ -163,8 +176,11 @@ export default function Private() {
 
                 <li className="list-row">
                     <div>
-                        <img
-                            className="size-10 rounded-box"
+                        <Image
+                            alt="Demo image"
+                            width={40}
+                            height={40}
+                            className="rounded-box"
                             src="https://img.daisyui.com/images/profile/demo/4@94.webp"
                         />
                     </div>
@@ -212,8 +228,11 @@ export default function Private() {
 
                 <li className="list-row">
                     <div>
-                        <img
-                            className="size-10 rounded-box"
+                        <Image
+                            alt="Demo image"
+                            width={40}
+                            height={40}
+                            className="rounded-box"
                             src="https://img.daisyui.com/images/profile/demo/3@94.webp"
                         />
                     </div>
@@ -263,10 +282,10 @@ export default function Private() {
             {/* Pagination */}
             <div className="mt-10 flex justify-center">
                 <div className="join">
-                <button className="join-item btn">«</button>
-                <button className="join-item btn">Page 1</button>
-                <button className="join-item btn">»</button>
-            </div>
+                    <button className="join-item btn">«</button>
+                    <button className="join-item btn">Page 1</button>
+                    <button className="join-item btn">»</button>
+                </div>
             </div>
         </div>
     );
