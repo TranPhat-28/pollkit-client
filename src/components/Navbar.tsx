@@ -63,7 +63,13 @@ const Navbar = () => {
               className="dropdown-content menu bg-base-100 rounded-box z-1 w-52 p-2 shadow-sm"
             >
               <li>
-                <a>Option A</a>
+                <a
+                  onClick={() => {
+                    router.push("/create-poll");
+                  }}
+                >
+                  Create poll
+                </a>
               </li>
               <li>
                 <a>Option B</a>
