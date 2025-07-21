@@ -3,7 +3,7 @@ import { FaCircleInfo } from "react-icons/fa6";
 
 export default function Private() {
   return (
-    <div className="h-full w-full p-4 md:p-5 lg:p-6">
+    <div className="page-wrapper">
       {/* Description */}
       <h1 className="font-bold text-xl mt-2 mb-4">Private Poll Space</h1>
       <div role="alert" className="alert alert-soft mb-4">

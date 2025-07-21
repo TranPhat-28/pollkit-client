@@ -2,7 +2,7 @@ import { FaFacebook, FaGoogle } from "react-icons/fa6";
 
 const LoginPage = () => {
   return (
-    <div className="h-full w-full p-4 md:p-5 lg:p-6">
+    <div className="page-wrapper">
       <div className="bg-base-300 w-full max-w-md mx-auto p-4 mt-12 rounded shadow">
         <h1 className="font-bold text-center">Login to Pollkit</h1>
         <p className="text-center text-sm">
