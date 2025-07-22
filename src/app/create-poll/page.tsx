@@ -1,39 +1,90 @@
+"use client";
+import { Suspense, useState } from "react";
+import { useSearchParams } from "next/navigation";
+
+type PollType = "public" | "private"; // remove later
+type StartOption = "now" | "start-at"; // remove later
+
 const CreatePollPage = () => {
+  const params = useSearchParams();
+  const [pollType, setPollType] = useState<PollType>(
+    params.has("private") ? "private" : "public"
+  );
+  const [startOption, setStartOption] = useState<StartOption>("now");
+  const selectPollType = (type: PollType) => {
+    setPollType(type);
+  };
+  const changeStartOption = (option: StartOption) => {
+    setStartOption(option);
+  };
+
   return (
-    <div className="h-full w-full p-4 md:p-5 lg:p-6 shadow-lg mt-6 rounded">
-      <p className="font-bold text-2xl mb-5">New Poll</p>
-      <form action="" className="flex flex-col gap-4">
-        <div className="flex w-full justify-between items-center gap-4">
-          <span>Title</span>
-          <input type="text" placeholder="Poll title" className="input" />
-        </div>
-        <div className="flex w-full justify-between items-center gap-4">
-          <span>Type</span>
-          <select defaultValue="Public poll" className="select">
-            <option disabled={true}>Public poll</option>
-            <option>Private poll</option>
+    <div className="page-wrapper">
+      <fieldset className="fieldset bg-base-400 border-base-300 rounded-box border p-4 mx-auto w-full max-w-[600px]">
+        <p className="text-center font-bold text-2xl">Create Poll</p>
+
+        <label className="label text-base">Poll Name</label>
+        <input type="text" required className="input w-full" />
+
+        <label className="label text-base">Start Time</label>
+        <div className="flex gap-2">
+          <select
+            className="select"
+            value={startOption}
+            onChange={(event) =>
+              changeStartOption(event.target.value as StartOption)
+            }
+          >
+            <option value="now">Now</option>
+            <option value="start-at">Start at</option>
           </select>
+          <input
+            type="time"
+            className="input"
+            disabled={startOption !== "start-at"}
+          />
         </div>
-        <div className="flex w-full justify-between items-center gap-4">
-          <span>Password</span>
-          <input type="text" placeholder="Password" className="input" />
+
+        <label className="label text-base">End Time</label>
+        <input type="time" className="input w-full" />
+
+        <label className="label text-base">Visibility</label>
+        <select
+          className="select w-full"
+          value={pollType}
+          onChange={(event) => selectPollType(event.target.value as PollType)}
+        >
+          <option value="public">Public poll</option>
+          <option value="private">Private poll</option>
+        </select>
+
+        {pollType === "private" && (
+          <>
+            <label className="label text-base">Password</label>
+            <input type="password" required className="input w-full" />
+          </>
+        )}
+
+        <div className="h-12 flex justify-between items-center">
+          <label className="label text-base ">Show result to users</label>
+          <input type="checkbox" className="toggle toggle-primary" />
         </div>
-        <div className="flex w-full justify-between items-center gap-4">
-          <span>End time</span>
-          <input type="time" className="input" />
+
+        <div className="h-12 flex justify-between items-center">
+          <label className="label text-base">Record for review</label>
+          <input type="checkbox" className="toggle toggle-primary" />
         </div>
-        <div className="flex w-full justify-between items-center gap-4 min-h-10">
-          <span>Record result</span>
-          <input type="checkbox" defaultChecked className="toggle" />
-        </div>
-        <div className="flex w-full justify-between items-center gap-4 min-h-10">
-          <span>Result visible</span>
-          <input type="checkbox" defaultChecked className="toggle" />
-        </div>
-        <button className="btn mt-4 max-w-[200px]">Create</button>
-      </form>
+
+        <button className="btn btn-primary mt-4">Login</button>
+      </fieldset>
     </div>
   );
 };
 
-export default CreatePollPage;
+const SuspenseCreatePollPage = () => (
+  <Suspense>
+    <CreatePollPage />
+  </Suspense>
+);
+
+export default SuspenseCreatePollPage;
