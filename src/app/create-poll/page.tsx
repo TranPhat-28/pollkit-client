@@ -75,7 +75,7 @@ const CreatePollPage = () => {
           <input type="checkbox" className="toggle toggle-primary" />
         </div>
 
-        <button className="btn btn-primary mt-4">Login</button>
+        <button className="btn btn-primary mt-4">Create</button>
       </fieldset>
     </div>
   );
