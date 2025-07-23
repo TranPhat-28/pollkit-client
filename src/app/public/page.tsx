@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { FaCircleInfo } from "react-icons/fa6";
 
-export default function Public() {
+export default function PublicPage() {
   return (
     <div className="page-wrapper">
       {/* Description */}

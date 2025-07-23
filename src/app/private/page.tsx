@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { FaCircleInfo } from "react-icons/fa6";
 
-export default function Private() {
+export default function PrivatePage() {
   return (
     <div className="page-wrapper">
       {/* Description */}
