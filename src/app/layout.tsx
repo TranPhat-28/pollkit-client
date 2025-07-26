@@ -1,4 +1,3 @@
-"use client"
 import Navbar from "@/components/Navbar";
 import SidebarDrawer from "@/components/SidebarDrawer";
 import type { Metadata } from "next";
