@@ -1,11 +1,9 @@
 "use client";
 import { Suspense, useEffect } from "react";
-import { useSearchParams } from "next/navigation";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { ICreatePollFormInput } from "@/types/forms";
 
 const CreatePollPage = () => {
-  const isPrivatePoll = useSearchParams().has("private");
   const {
     register,
     unregister,
@@ -87,7 +85,6 @@ const CreatePollPage = () => {
 
         <label className="label text-base">Visibility</label>
         <select
-          defaultValue={isPrivatePoll ? "private" : "public"}
           {...register("pollType", { required: true })}
           className="select w-full"
         >
