@@ -3,9 +3,14 @@ import CreatePrivatePollCard from "@/components/CreatePrivatePollCard";
 import CreatePublicPollCard from "@/components/CreatePublicPollCard";
 import LockedCreatePrivatePollCard from "@/components/LockedCreatePrivatePollCard";
 import { useState } from "react";
+import { useAllPolls } from "@/hooks";
 
 export default function Home() {
   const [isAuthed] = useState<boolean>(true);
+
+  // remove later
+  const { data: polls } = useAllPolls();
+  console.log("test useAllPolls = ", polls);
 
   return (
     <div className="page-wrapper">
