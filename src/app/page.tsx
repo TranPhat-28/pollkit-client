@@ -2,15 +2,23 @@
 import CreatePrivatePollCard from "@/components/CreatePrivatePollCard";
 import CreatePublicPollCard from "@/components/CreatePublicPollCard";
 import LockedCreatePrivatePollCard from "@/components/LockedCreatePrivatePollCard";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useAllPolls } from "@/hooks";
+import { useAppSelector, useAppDispatch, decrementPoll } from "@/store";
 
 export default function Home() {
   const [isAuthed] = useState<boolean>(true);
 
   // remove later
   const { data: polls } = useAllPolls();
-  console.log("test useAllPolls = ", polls);
+  const pollState = useAppSelector((state) => state.poll);
+  const dispatch = useAppDispatch();
+  useEffect(() => {
+    dispatch(decrementPoll());
+
+    console.log("test useAllPolls = ", polls);
+    console.log("test store = ", pollState);
+  }, []);
 
   return (
     <div className="page-wrapper">
