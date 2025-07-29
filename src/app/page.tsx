@@ -1,10 +1,10 @@
 "use client";
-import CreatePrivatePollCard from "@/components/CreatePrivatePollCard";
-import CreatePublicPollCard from "@/components/CreatePublicPollCard";
-import LockedCreatePrivatePollCard from "@/components/LockedCreatePrivatePollCard";
 import { useEffect, useState } from "react";
 import { useAllPolls } from "@/hooks";
 import { useAppSelector, useAppDispatch, decrementPoll } from "@/store";
+import CreatePollCard from "@/components/CreatePollCard";
+import GoToDashboardCard from "@/components/GoToDashboardCard";
+import LockedGoToDashboardCard from "@/components/LockedGoToDashboardCard";
 
 export default function Home() {
   const [isAuthed] = useState<boolean>(true);
@@ -23,11 +23,11 @@ export default function Home() {
   return (
     <div className="page-wrapper">
       <h1 className="font-bold text-xl mt-2">Welcome to Pollkit!</h1>
-      <p>You can start by creating a poll</p>
+      <p>You can start with these features</p>
       <div className="w-full mx-auto mt-8 flex flex-col gap-4">
-        <CreatePublicPollCard />
-        {isAuthed && <CreatePrivatePollCard />}
-        {!isAuthed && <LockedCreatePrivatePollCard />}
+        <CreatePollCard />
+        {isAuthed && <GoToDashboardCard />}
+        {!isAuthed && <LockedGoToDashboardCard />}
       </div>
     </div>
   );

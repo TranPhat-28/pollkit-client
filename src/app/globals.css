@@ -32,16 +32,6 @@ body {
   font-size: 1.5rem;
 }
 
-.bg-public-poll-card {
-  background-image: url("/abstract_bg_a.png");
-  background-size: cover;
-}
-
-.bg-private-poll-card {
-  background-image: url("/abstract_bg_b.png");
-  background-size: cover;
-}
-
 /* Page wrapper class */
 .page-wrapper {
     @apply h-full w-full p-4 md:p-5 lg:p-6;
