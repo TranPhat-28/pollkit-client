@@ -1,9 +1,12 @@
 "use client";
 import { useRouter } from "next/navigation";
+import { useState } from "react";
 import { HiMenuAlt1 } from "react-icons/hi";
+import NavbarAvatar from "./NavbarAvatar";
 
 const Navbar = () => {
   const router = useRouter();
+  const [isAuthed] = useState<boolean>(true);
 
   return (
     <div className="navbar bg-base-300 w-full">
@@ -77,12 +80,15 @@ const Navbar = () => {
             </ul>
           </div>
         </div>
-        <button
-          className="btn btn-primary btn-outline lg:ml-auto"
-          onClick={() => router.push("/login")}
-        >
-          Login
-        </button>
+        {!isAuthed && (
+          <button
+            className="btn btn-primary btn-outline lg:ml-auto"
+            onClick={() => router.push("/login")}
+          >
+            Login
+          </button>
+        )}
+        {isAuthed && <NavbarAvatar />}
       </div>
     </div>
   );
